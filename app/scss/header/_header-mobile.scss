@@ -1,0 +1,54 @@
+@import "menu";
+
+// Header on mobile device
+
+.header-mobile {
+    width: 100%;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    transition: all 0.1s ease-in-out;
+
+    @include responsive(desktop) {
+        display: none;
+    }
+
+    &__inner {
+        width: 100%;
+        height: 66px;
+        overflow: hidden;
+        overflow-x: scroll;
+        position: relative;
+    }
+
+    .logo {
+        width: 45px;
+        transform: translateX(-55px);
+        transition: all 0.2s ease-in-out;
+
+        &__img {
+            @include imgToCeneter(40px, 40px);
+        }
+    }
+
+    .menu__list {
+        transform: translateX(-47px);
+        transition: all 0.2s ease-in-out;
+    }
+
+    &.header-mobile_scroll {
+        background-color: $header-color;
+        transition: all 0.1s ease-in-out;
+        box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.1);
+
+        .logo {
+            transform: translateX(0);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .menu__list {
+            transform: translateX(4px);
+            transition: all 0.2s ease-in-out;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+// Header styles
+@import 'logo';
+@import 'menu';
+@import 'back-call';
+
+.header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: $header-color;
+    z-index: 100;
+    
+    @include responsive(desktop) {
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+
+    @include responsive(mobile) {
+        .menu {
+            display: none;
+        }
+    }
+
+    &__content {
+        @include flex(row);
+    }
+}

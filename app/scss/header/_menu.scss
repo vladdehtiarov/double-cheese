@@ -1,0 +1,62 @@
+// Menu styles
+
+.menu {
+    margin-left: 15px;
+
+    @include responsive(mobile) {
+        width: auto;
+        margin-left: 0;
+        padding: 0 8px;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%)
+    }
+
+    &__list {
+        @include flex(row);
+        justify-content: flex-start;
+
+        @include responsive(mobile) {
+            width: auto;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__item {
+        padding: 0 10px;
+
+        @include responsive(mobile) {
+            padding: 0;
+            margin: 0 8px;
+        }
+
+        &:first-child {
+            @include responsive(desktop) {
+                padding-left: 0;
+            }
+        }
+
+        &:last-child {
+            @include responsive(desktop) {
+                padding-right: 0;
+            }
+        }
+
+        a {
+            font-family: $global-fonts;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 16px;
+            color: $text-color;
+
+            @include responsive(mobile) {
+                padding: 12px 24px;
+                white-space: nowrap;
+                background-color: rgba($color: $text-color_light, $alpha: 0.15);
+                border-radius: 24px;
+            }
+        }
+    }
+}
